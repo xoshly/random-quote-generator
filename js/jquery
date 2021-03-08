@@ -1,0 +1,57 @@
+var randomQuote = '';
+var quoteText = '';
+var quoteAuthor = '';
+var quoteData;
+
+$(document).ready(function() {
+  var myQuotes = [
+      {author: 'Viktor E. Frankl', quote: 'Those who have a why to live, can bear with almost any how' },
+      {author: 'Jacques Prevert', quote: 'Even if happiness forgets you a little bit, never completely forget about it'},
+      {author: 'Unknown', quote: 'Minds are like parachutes, they function only when open'},
+      {author: 'Will Rogers', quote: 'Even if you’re on the right track, you’ll get run over if you just sit there'},
+      {author: 'Christopher Reeve', quote: 'Once you choose hope, anything is possible'},
+      {author: 'Matt Lucas', quote: 'Keep yourself busy if you want to avoid depression. For me, inactivity is the enemy'},
+      {author: 'Madeleine L Engle', quote: 'Maybe you have to know the darkness before you can appreciate the light'},
+      {author: 'C.S. Lewis', quote: 'There are far, far better things ahead than anything we leave behind'}
+    ];
+  
+    var colors = [
+    '#FFCDD2',
+    '#CE93D8',
+    '#EF9A9A',
+    '#9FA8DA',
+    '#90CAF9',
+    '#A5D6A7',
+    '#E6EE9C',
+    '#FFAB91'
+   ];
+  
+  
+  
+    function getQuotes () {
+      var randomQuote = Math.floor(Math.random() * myQuotes.length);
+      var quoteText = myQuotes[randomQuote].quote;
+      var quoteAuthor = myQuotes[randomQuote].author;
+      
+      $("#text").text(quoteText);
+      $("#author").text(quoteAuthor);
+      
+      
+    };
+  
+    
+    $(".quote-tweet").on("click", function() {
+      window.open("https://twitter.com/home/?status=" + "\"" + $("#quote").text() + "\"" + " - " + $("#author").text(), '_blank');
+    });
+    
+  
+    $("#new-quote").on("click", function() {
+      getQuotes();
+    });
+    getQuotes();
+});
+    
+    
+  
+    
+    
