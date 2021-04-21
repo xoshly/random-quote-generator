@@ -1,4 +1,4 @@
 # Random Quote Generator
 
-### A JavaScript project that generates random quotes for uplifting moods and inspire the user.
+### JavaScript project that generates random quotes to uplift and inspires the user.
 ### By: Ashley Randall
